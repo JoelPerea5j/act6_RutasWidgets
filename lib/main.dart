@@ -1,43 +1,40 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
+import 'package:PereaWidgets/Inicio.dart';
+import "package:PereaWidgets/AspectRatio.dart";
+import 'package:PereaWidgets/AutoComplete.dart';
+import 'package:PereaWidgets/BackdropFilter.dart';
+import 'package:PereaWidgets/Banner.dart';
+import 'package:PereaWidgets/baseline.dart';
+import 'package:PereaWidgets/Block.dart';
+import 'package:PereaWidgets/button.dart';
+import 'package:PereaWidgets/bottomSheet.dart';
+import 'package:PereaWidgets/Builder.dart';
+import 'package:PereaWidgets/appbar.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MirutasApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MirutasApp extends StatelessWidget {
+  const MirutasApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: "entre paginas routes",
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const Inicio(),
+        "/appbar": (context) => const Myappbar(),
+        "/AspectRatio": (context) => const aspectratio(),
+        "/AutoComplete": (context) => const AutoCompleteExample(),
+        "/BackDropFilter": (context) => const backdrop(),
+        "/Banner": (context) => const CustomBannerExample(),
+        "/Baseline": (context) => const BaselineExample(),
+        "/Block": (context) => const Block(),
+        "/button": (context) => const Button(),
+        "/bottom": (context) => const Bottom(),
+        "/builder": (context) => const Builders(),
+      },
     );
   }
 }
